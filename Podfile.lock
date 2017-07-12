@@ -19,20 +19,23 @@ PODS:
   - CHIPageControl/Jaloro (0.1.3)
   - CHIPageControl/Paprika (0.1.3)
   - CHIPageControl/Puya (0.1.3)
+  - KVLoading (1.4)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - CHIPageControl
+  - KVLoading
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   CHIPageControl: 2d3a0edacd7e3bc113bc88cbf187ba8f0b045548
+  KVLoading: 64785bf0333c1873265c4a7c7cbdb4565ef63d55
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: e507f4dc9d84f608f6401b2a953c8f1fe549a886
+PODFILE CHECKSUM: 89d76cb54a025cbd6fa53c7885a967553baf1958
 
 COCOAPODS: 1.2.1

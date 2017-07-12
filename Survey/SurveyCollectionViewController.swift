@@ -10,6 +10,7 @@ import UIKit
 import CHIPageControl
 import Alamofire
 import AlamofireImage
+import KVLoading
 
 class SurveyViewController: UIViewController {
     
@@ -19,8 +20,9 @@ class SurveyViewController: UIViewController {
     var surveys: [Survey] = []
     
     override func viewDidLoad() {
+        KVLoading.show()
         pageControl.transform = CGAffineTransform(rotationAngle: .pi / 2)
-        pageControl.frame = CGRect(x: self.view.frame.size.width - 20, y: 0, width: 20, height: self.collectionView.frame.size.height)
+        pageControl.frame = CGRect(x: self.view.frame.size.width - pageControl.frame.size.width, y: 0, width: pageControl.frame.size.width, height: self.collectionView.frame.size.height)
         
         NetworkManager(token: "36dece969c2c0ee12ffea0f63ad15e7e237e76434ca0f7c2bcf2e56a821d2011").getSurveys { (surveys, error) in
             if surveys != nil {
@@ -30,6 +32,7 @@ class SurveyViewController: UIViewController {
             } else {
                 print("\(error!.localizedDescription)")
             }
+            KVLoading.hide()
         }
     }
     
