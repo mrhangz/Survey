@@ -10,6 +10,7 @@ import UIKit
 import CHIPageControl
 import Alamofire
 import AlamofireImage
+import KVLoading
 
 class SurveyViewController: UIViewController {
     
@@ -19,6 +20,7 @@ class SurveyViewController: UIViewController {
     var surveys: [Survey] = []
     
     override func viewDidLoad() {
+        KVLoading.show()
         pageControl.transform = CGAffineTransform(rotationAngle: .pi / 2)
         pageControl.frame = CGRect(x: self.view.frame.size.width - 20, y: 0, width: 20, height: self.collectionView.frame.size.height)
         
@@ -30,6 +32,7 @@ class SurveyViewController: UIViewController {
             } else {
                 print("\(error!.localizedDescription)")
             }
+            KVLoading.hide()
         }
     }
     
