@@ -15,6 +15,9 @@
 		A8B1AADB1F15CDEA0010A781 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8B1AAD91F15CDEA0010A781 /* LaunchScreen.storyboard */; };
 		A8B1AAE61F15CDEA0010A781 /* SurveyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1AAE51F15CDEA0010A781 /* SurveyTests.swift */; };
 		A8B1AAF51F15E1C20010A781 /* SurveyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1AAF41F15E1C20010A781 /* SurveyCollectionViewController.swift */; };
+		A8B1AAF71F163F2A0010A781 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1AAF61F163F2A0010A781 /* NetworkManager.swift */; };
+		A8B1AAF91F1644AD0010A781 /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1AAF81F1644AD0010A781 /* Survey.swift */; };
+		A8B1AAFB1F1660450010A781 /* SurveyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1AAFA1F1660450010A781 /* SurveyCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		A8B1AAE51F15CDEA0010A781 /* SurveyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyTests.swift; sourceTree = "<group>"; };
 		A8B1AAE71F15CDEA0010A781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8B1AAF41F15E1C20010A781 /* SurveyCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyCollectionViewController.swift; sourceTree = "<group>"; };
+		A8B1AAF61F163F2A0010A781 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		A8B1AAF81F1644AD0010A781 /* Survey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
+		A8B1AAFA1F1660450010A781 /* SurveyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyCollectionViewCell.swift; sourceTree = "<group>"; };
 		B201F2AC58C16A93EBFD1338 /* Pods-SurveyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SurveyTests/Pods-SurveyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C6CA182ADE49B63054A69FA3 /* Pods-SurveyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SurveyTests/Pods-SurveyTests.release.xcconfig"; sourceTree = "<group>"; };
 		F8C9D6BBE8D9676CB45ED2C6 /* Pods_Survey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +139,7 @@
 		A8B1AAF01F15D3450010A781 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A8B1AAF81F1644AD0010A781 /* Survey.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -141,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				A8B1AAD41F15CDEA0010A781 /* Main.storyboard */,
+				A8B1AAFA1F1660450010A781 /* SurveyCollectionViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -156,6 +164,7 @@
 		A8B1AAF31F15D36B0010A781 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A8B1AAF61F163F2A0010A781 /* NetworkManager.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -364,6 +373,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8B1AAF71F163F2A0010A781 /* NetworkManager.swift in Sources */,
+				A8B1AAFB1F1660450010A781 /* SurveyCollectionViewCell.swift in Sources */,
+				A8B1AAF91F1644AD0010A781 /* Survey.swift in Sources */,
 				A8B1AAF51F15E1C20010A781 /* SurveyCollectionViewController.swift in Sources */,
 				A8B1AAD11F15CDEA0010A781 /* AppDelegate.swift in Sources */,
 			);
