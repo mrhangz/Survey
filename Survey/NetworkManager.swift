@@ -60,6 +60,8 @@ class NetworkManager: NSObject {
         Alamofire.request(imageURL + "l").responseImage { response in
             if let image = response.result.value {
                 completion(image)
+            } else {
+                completion(nil)
             }
         }
     }
