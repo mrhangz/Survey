@@ -61,6 +61,7 @@ extension SurveyViewController: UICollectionViewDataSource {
         cell.descriptionLabel.text = survey.description
         if survey.coverImageURL != nil {
             NetworkManager().getImage(imageURL: survey.coverImageURL!) { response in
+                cell.imageView.contentMode = .scaleAspectFill
                 cell.imageView.image = response
             }
         }
