@@ -154,6 +154,11 @@
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="SURVEYS" id="xRg-RO-W4Q">
                         <barButtonItem key="backBarButtonItem" title=" " id="5Dc-0R-Su4"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="mPn-YL-nGZ">
+                            <connections>
+                                <action selector="refreshWithSender:" destination="PkR-OR-r0g" id="xF6-R6-N4a"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="V2f-24-gLl" id="Amd-3y-l7R"/>
