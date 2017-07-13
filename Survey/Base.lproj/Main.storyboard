@@ -89,6 +89,9 @@
                                                             <integer key="value" value="20"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="takeSurveyWithSender:" destination="INl-37-qDJ" eventType="touchUpInside" id="qy4-7B-rHg"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </view>
@@ -110,6 +113,7 @@
                                         <connections>
                                             <outlet property="descriptionLabel" destination="Nav-n2-ldL" id="jLi-4M-2YG"/>
                                             <outlet property="imageView" destination="0Iv-cL-5ER" id="ezo-gR-vo7"/>
+                                            <outlet property="takeSurveyButton" destination="5Vb-iC-dDc" id="Xh9-vH-fjb"/>
                                             <outlet property="titleLabel" destination="AE3-Ic-CeR" id="M1G-0u-ol3"/>
                                         </connections>
                                     </collectionViewCell>
@@ -154,17 +158,17 @@
                     <connections>
                         <outlet property="collectionView" destination="V2f-24-gLl" id="Amd-3y-l7R"/>
                         <outlet property="pageControl" destination="OEQ-uP-bIR" id="R7i-WW-ylk"/>
-                        <segue destination="Zfn-sT-gcY" kind="show" id="dzs-sV-Djg"/>
+                        <segue destination="Zfn-sT-gcY" kind="show" identifier="TakeSurvey" id="dzs-sV-Djg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meO-lI-jLD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="581.60000000000002" y="58.920539730134934"/>
         </scene>
-        <!--View Controller-->
+        <!--Take Survey View Controller-->
         <scene sceneID="cU7-3d-678">
             <objects>
-                <viewController id="Zfn-sT-gcY" sceneMemberID="viewController">
+                <viewController id="Zfn-sT-gcY" customClass="TakeSurveyViewController" customModule="Survey" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3qJ-DJ-7wq"/>
                         <viewControllerLayoutGuide type="bottom" id="Gk6-Zs-z4y"/>
