@@ -36,6 +36,18 @@ class SurveyViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! TakeSurveyViewController
+        let survey = sender as! Survey
+        destinationVC.survey = survey
+    }
+    
+}
+
+extension SurveyViewController: SurveyCollectionViewCellDelegate {
+    func takeSurvey(index: Int) {
+        performSegue(withIdentifier: "TakeSurvey", sender: surveys[index])
+    }
 }
 
 extension SurveyViewController: UIScrollViewDelegate {
@@ -57,10 +69,13 @@ extension SurveyViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SurveyCell", for: indexPath) as! SurveyCollectionViewCell
         let survey = surveys[indexPath.row]
+        cell.takeSurveyButton.tag = indexPath.row
+        cell.delegate = self
         cell.titleLabel.text = survey.title
         cell.descriptionLabel.text = survey.description
         if survey.coverImageURL != nil {
             NetworkManager().getImage(imageURL: survey.coverImageURL!) { response in
+                cell.imageView.contentMode = .scaleAspectFill
                 cell.imageView.image = response
             }
         }
