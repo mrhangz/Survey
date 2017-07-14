@@ -22,26 +22,51 @@ class SurveyViewController: UIViewController {
     override func viewDidLoad() {
         pageControl.transform = CGAffineTransform(rotationAngle: .pi / 2)
         pageControl.frame = CGRect(x: self.view.frame.size.width - pageControl.frame.size.width, y: 0, width: pageControl.frame.size.width, height: self.collectionView.frame.size.height)
-        getSurveys()
+        refresh(sender: nil)
     }
     
-    @IBAction func refresh(sender: UIBarButtonItem) {
-        getSurveys()
-    }
-    
-    func getSurveys() {
+    @IBAction func refresh(sender: UIBarButtonItem?) {
         KVLoading.show()
-        NetworkManager(token: "36dece969c2c0ee12ffea0f63ad15e7e237e76434ca0f7c2bcf2e56a821d2011").getSurveys { (surveys, error) in
+        let token: String? = UserDefaults.standard.value(forKey: "token") as? String
+        if token == nil {
+            getNewToken()
+            return
+        }
+        NetworkManager(token: token!).getSurveys { (surveys, error) in
             if surveys != nil {
                 self.surveys = surveys!
                 self.pageControl.numberOfPages = self.surveys.count
                 self.collectionView.reloadData()
+                if self.surveys.count > 0 {
+                    self.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+                }
             } else {
-                print("\(error!.localizedDescription)")
+                self.showAlert()
             }
-            self.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
             KVLoading.hide()
         }
+    }
+    
+    func getNewToken() {
+        NetworkManager().getToken(username: "carlos@nimbl3.com", password: "antikera") { (token, error) in
+            if token != nil {
+                UserDefaults.standard.setValue(token, forKey: "token")
+                UserDefaults.standard.synchronize()
+                self.refresh(sender: nil)
+            }
+        }
+    }
+    
+    func showAlert() {
+        let alertController = UIAlertController(title: "Something went wrong", message: "Maybe a token is expired. Try getting a new one?", preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
+        let okAction = UIAlertAction(title: "OK", style: .default) {
+            (result : UIAlertAction) -> Void in
+            self.getNewToken()
+        }
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -75,20 +100,30 @@ extension SurveyViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SurveyCell", for: indexPath) as! SurveyCollectionViewCell
-        let survey = surveys[indexPath.row]
-        cell.takeSurveyButton.tag = indexPath.row
-        cell.delegate = self
-        cell.titleLabel.text = survey.title
-        cell.descriptionLabel.text = survey.description
-        if survey.coverImageURL != nil {
-            NetworkManager().getImage(imageURL: survey.coverImageURL!) { response in
-                cell.imageView.contentMode = .scaleAspectFill
-                cell.imageView.image = response
+        if self.surveys.count == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EmptyCell", for: indexPath)
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SurveyCell", for: indexPath) as! SurveyCollectionViewCell
+            let survey = surveys[indexPath.row]
+            cell.takeSurveyButton.tag = indexPath.row
+            cell.delegate = self
+            cell.titleLabel.text = survey.title
+            cell.descriptionLabel.text = survey.description
+            if survey.coverImageURL != nil {
+                NetworkManager().getImage(imageURL: survey.coverImageURL!) { response in
+                    if response != nil {
+                        cell.imageView.contentMode = .scaleAspectFill
+                        cell.imageView.image = response
+                    } else {
+                        cell.imageView.contentMode = .center
+                        cell.imageView.image = UIImage(named: "noimage")
+                    }
+                }
             }
+            
+            return cell
         }
-        
-        return cell
     }
     
 }
