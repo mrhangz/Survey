@@ -10,6 +10,7 @@ target 'Survey' do
   pod 'SwiftyJSON'
   pod 'CHIPageControl'
   pod 'KVLoading'
+  pod 'SideMenu'
 
   target 'SurveyTests' do
     inherit! :search_paths
