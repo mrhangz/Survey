@@ -57,9 +57,11 @@ class NetworkManager: NSObject {
     }
     
     func getImage(imageURL: String, completion: @escaping (UIImage?) -> Void) {
-        Alamofire.request(imageURL).responseImage { response in
+        Alamofire.request(imageURL + "l").responseImage { response in
             if let image = response.result.value {
                 completion(image)
+            } else {
+                completion(nil)
             }
         }
     }

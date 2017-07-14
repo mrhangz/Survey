@@ -14,10 +14,11 @@
 		A8B1AAD81F15CDEA0010A781 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8B1AAD71F15CDEA0010A781 /* Assets.xcassets */; };
 		A8B1AADB1F15CDEA0010A781 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8B1AAD91F15CDEA0010A781 /* LaunchScreen.storyboard */; };
 		A8B1AAE61F15CDEA0010A781 /* SurveyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1AAE51F15CDEA0010A781 /* SurveyTests.swift */; };
-		A8B1AAF51F15E1C20010A781 /* SurveyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1AAF41F15E1C20010A781 /* SurveyCollectionViewController.swift */; };
+		A8B1AAF51F15E1C20010A781 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1AAF41F15E1C20010A781 /* SurveyViewController.swift */; };
 		A8B1AAF71F163F2A0010A781 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1AAF61F163F2A0010A781 /* NetworkManager.swift */; };
 		A8B1AAF91F1644AD0010A781 /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1AAF81F1644AD0010A781 /* Survey.swift */; };
 		A8B1AAFB1F1660450010A781 /* SurveyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1AAFA1F1660450010A781 /* SurveyCollectionViewCell.swift */; };
+		A8B1AAFD1F1731270010A781 /* TakeSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1AAFC1F1731270010A781 /* TakeSurveyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +43,11 @@
 		A8B1AAE11F15CDEA0010A781 /* SurveyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurveyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B1AAE51F15CDEA0010A781 /* SurveyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyTests.swift; sourceTree = "<group>"; };
 		A8B1AAE71F15CDEA0010A781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A8B1AAF41F15E1C20010A781 /* SurveyCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyCollectionViewController.swift; sourceTree = "<group>"; };
+		A8B1AAF41F15E1C20010A781 /* SurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		A8B1AAF61F163F2A0010A781 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A8B1AAF81F1644AD0010A781 /* Survey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
 		A8B1AAFA1F1660450010A781 /* SurveyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyCollectionViewCell.swift; sourceTree = "<group>"; };
+		A8B1AAFC1F1731270010A781 /* TakeSurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeSurveyViewController.swift; sourceTree = "<group>"; };
 		B201F2AC58C16A93EBFD1338 /* Pods-SurveyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SurveyTests/Pods-SurveyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C6CA182ADE49B63054A69FA3 /* Pods-SurveyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SurveyTests/Pods-SurveyTests.release.xcconfig"; sourceTree = "<group>"; };
 		F8C9D6BBE8D9676CB45ED2C6 /* Pods_Survey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +121,7 @@
 				A8B1AAF21F15D35F0010A781 /* Controllers */,
 				A8B1AAF01F15D3450010A781 /* Models */,
 				A8B1AAF11F15D3550010A781 /* Views */,
+				A8B1AAFE1F175A460010A781 /* ViewModels */,
 				A8B1AAD01F15CDEA0010A781 /* AppDelegate.swift */,
 				A8B1AAD71F15CDEA0010A781 /* Assets.xcassets */,
 				A8B1AAD91F15CDEA0010A781 /* LaunchScreen.storyboard */,
@@ -156,7 +159,8 @@
 		A8B1AAF21F15D35F0010A781 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A8B1AAF41F15E1C20010A781 /* SurveyCollectionViewController.swift */,
+				A8B1AAF41F15E1C20010A781 /* SurveyViewController.swift */,
+				A8B1AAFC1F1731270010A781 /* TakeSurveyViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -167,6 +171,13 @@
 				A8B1AAF61F163F2A0010A781 /* NetworkManager.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		A8B1AAFE1F175A460010A781 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,7 +387,8 @@
 				A8B1AAF71F163F2A0010A781 /* NetworkManager.swift in Sources */,
 				A8B1AAFB1F1660450010A781 /* SurveyCollectionViewCell.swift in Sources */,
 				A8B1AAF91F1644AD0010A781 /* Survey.swift in Sources */,
-				A8B1AAF51F15E1C20010A781 /* SurveyCollectionViewController.swift in Sources */,
+				A8B1AAF51F15E1C20010A781 /* SurveyViewController.swift in Sources */,
+				A8B1AAFD1F1731270010A781 /* TakeSurveyViewController.swift in Sources */,
 				A8B1AAD11F15CDEA0010A781 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
