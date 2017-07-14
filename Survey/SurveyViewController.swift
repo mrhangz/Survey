@@ -70,9 +70,11 @@ class SurveyViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! TakeSurveyViewController
-        let survey = sender as! Survey
-        destinationVC.survey = survey
+        if segue.identifier == "TakeSurvey" {
+            let destinationVC = segue.destination as! TakeSurveyViewController
+            let survey = sender as! Survey
+            destinationVC.survey = survey
+        }
     }
     
 }
