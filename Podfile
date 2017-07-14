@@ -9,6 +9,8 @@ target 'Survey' do
   pod 'AlamofireImage'
   pod 'SwiftyJSON'
   pod 'CHIPageControl'
+  pod 'KVLoading'
+  pod 'SideMenu'
 
   target 'SurveyTests' do
     inherit! :search_paths

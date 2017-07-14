@@ -14,10 +14,16 @@
 		A8B1AAD81F15CDEA0010A781 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8B1AAD71F15CDEA0010A781 /* Assets.xcassets */; };
 		A8B1AADB1F15CDEA0010A781 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8B1AAD91F15CDEA0010A781 /* LaunchScreen.storyboard */; };
 		A8B1AAE61F15CDEA0010A781 /* SurveyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1AAE51F15CDEA0010A781 /* SurveyTests.swift */; };
-		A8B1AAF51F15E1C20010A781 /* SurveyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1AAF41F15E1C20010A781 /* SurveyCollectionViewController.swift */; };
+		A8B1AAF51F15E1C20010A781 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1AAF41F15E1C20010A781 /* SurveyViewController.swift */; };
 		A8B1AAF71F163F2A0010A781 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1AAF61F163F2A0010A781 /* NetworkManager.swift */; };
 		A8B1AAF91F1644AD0010A781 /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1AAF81F1644AD0010A781 /* Survey.swift */; };
 		A8B1AAFB1F1660450010A781 /* SurveyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1AAFA1F1660450010A781 /* SurveyCollectionViewCell.swift */; };
+		A8B1AAFD1F1731270010A781 /* TakeSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1AAFC1F1731270010A781 /* TakeSurveyViewController.swift */; };
+		A8B1AB0E1F1894290010A781 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1AB0D1F1894290010A781 /* Question.swift */; };
+		A8B1AB101F18A53A0010A781 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1AB0F1F18A53A0010A781 /* Answer.swift */; };
+		A8B36C6E1F18CEE900CA43E4 /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8B36C6D1F18CEE900CA43E4 /* QuestionView.xib */; };
+		A8B36C701F18CFA200CA43E4 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B36C6F1F18CFA200CA43E4 /* QuestionView.swift */; };
+		A8B36C741F1922DC00CA43E4 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B36C731F1922DC00CA43E4 /* TokenManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +48,16 @@
 		A8B1AAE11F15CDEA0010A781 /* SurveyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurveyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B1AAE51F15CDEA0010A781 /* SurveyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyTests.swift; sourceTree = "<group>"; };
 		A8B1AAE71F15CDEA0010A781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A8B1AAF41F15E1C20010A781 /* SurveyCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyCollectionViewController.swift; sourceTree = "<group>"; };
+		A8B1AAF41F15E1C20010A781 /* SurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		A8B1AAF61F163F2A0010A781 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A8B1AAF81F1644AD0010A781 /* Survey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
 		A8B1AAFA1F1660450010A781 /* SurveyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyCollectionViewCell.swift; sourceTree = "<group>"; };
+		A8B1AAFC1F1731270010A781 /* TakeSurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeSurveyViewController.swift; sourceTree = "<group>"; };
+		A8B1AB0D1F1894290010A781 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		A8B1AB0F1F18A53A0010A781 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		A8B36C6D1F18CEE900CA43E4 /* QuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
+		A8B36C6F1F18CFA200CA43E4 /* QuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		A8B36C731F1922DC00CA43E4 /* TokenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		B201F2AC58C16A93EBFD1338 /* Pods-SurveyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SurveyTests/Pods-SurveyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C6CA182ADE49B63054A69FA3 /* Pods-SurveyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SurveyTests/Pods-SurveyTests.release.xcconfig"; sourceTree = "<group>"; };
 		F8C9D6BBE8D9676CB45ED2C6 /* Pods_Survey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				A8B1AAF81F1644AD0010A781 /* Survey.swift */,
+				A8B1AB0D1F1894290010A781 /* Question.swift */,
+				A8B1AB0F1F18A53A0010A781 /* Answer.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -149,6 +163,8 @@
 			children = (
 				A8B1AAD41F15CDEA0010A781 /* Main.storyboard */,
 				A8B1AAFA1F1660450010A781 /* SurveyCollectionViewCell.swift */,
+				A8B36C6D1F18CEE900CA43E4 /* QuestionView.xib */,
+				A8B36C6F1F18CFA200CA43E4 /* QuestionView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -156,7 +172,8 @@
 		A8B1AAF21F15D35F0010A781 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A8B1AAF41F15E1C20010A781 /* SurveyCollectionViewController.swift */,
+				A8B1AAF41F15E1C20010A781 /* SurveyViewController.swift */,
+				A8B1AAFC1F1731270010A781 /* TakeSurveyViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -165,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				A8B1AAF61F163F2A0010A781 /* NetworkManager.swift */,
+				A8B36C731F1922DC00CA43E4 /* TokenManager.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -260,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8B36C6E1F18CEE900CA43E4 /* QuestionView.xib in Resources */,
 				A8B1AADB1F15CDEA0010A781 /* LaunchScreen.storyboard in Resources */,
 				A8B1AAD81F15CDEA0010A781 /* Assets.xcassets in Resources */,
 				A8B1AAD61F15CDEA0010A781 /* Main.storyboard in Resources */,
@@ -376,8 +395,13 @@
 				A8B1AAF71F163F2A0010A781 /* NetworkManager.swift in Sources */,
 				A8B1AAFB1F1660450010A781 /* SurveyCollectionViewCell.swift in Sources */,
 				A8B1AAF91F1644AD0010A781 /* Survey.swift in Sources */,
-				A8B1AAF51F15E1C20010A781 /* SurveyCollectionViewController.swift in Sources */,
+				A8B1AAF51F15E1C20010A781 /* SurveyViewController.swift in Sources */,
+				A8B1AAFD1F1731270010A781 /* TakeSurveyViewController.swift in Sources */,
+				A8B1AB0E1F1894290010A781 /* Question.swift in Sources */,
 				A8B1AAD11F15CDEA0010A781 /* AppDelegate.swift in Sources */,
+				A8B36C741F1922DC00CA43E4 /* TokenManager.swift in Sources */,
+				A8B36C701F18CFA200CA43E4 /* QuestionView.swift in Sources */,
+				A8B1AB101F18A53A0010A781 /* Answer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
