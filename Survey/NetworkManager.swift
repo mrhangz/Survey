@@ -11,20 +11,21 @@ import Alamofire
 import SwiftyJSON
 
 class NetworkManager: NSObject {
-    let baseURL: String = "https://nimbl3-survey-api.herokuapp.com"
-    var token: String = ""
+    private let baseURL: String = "https://nimbl3-survey-api.herokuapp.com"
+    private let username: String = "carlos@nimbl3.com"
+    private let password: String = "antikera"
+    
+    lazy var manager: SessionManager = {
+        Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 30
+        Alamofire.SessionManager.default.session.configuration.timeoutIntervalForResource = 30
+        return Alamofire.SessionManager.default
+    }()
     
     override init() {
         
     }
     
-    init(token: String) {
-        self.token = token
-        
-        super.init()
-    }
-    
-    func getToken(username: String, password: String, completion: @escaping (String?, Error?) -> Void) {
+    func getToken(completion: @escaping (String?, Error?) -> Void) {
         let requestURL: String = "\(baseURL)/oauth/token"
         Alamofire.request(requestURL, method: .post, parameters: ["grant_type": "password", "username": username, "password": password]).responseJSON { (response) in
             switch response.result {
@@ -40,6 +41,7 @@ class NetworkManager: NSObject {
     func getSurveys(completion: @escaping ([Survey]?, Error?) -> Void) {
         let perPage = 50
         let requestURL: String = "\(baseURL)/surveys.json?page=1&per_page=\(perPage)"
+        let token = UserDefaults.standard.value(forKey: "token") as! String
         Alamofire.request(requestURL, headers: ["Authorization": "Bearer \(token)"]).responseJSON { (response) in
             switch response.result {
             case .success:

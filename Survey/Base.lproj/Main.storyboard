@@ -182,7 +182,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="5Dc-0R-Su4"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="mPn-YL-nGZ">
                             <connections>
-                                <action selector="refreshWithSender:" destination="PkR-OR-r0g" id="xF6-R6-N4a"/>
+                                <action selector="refresh" destination="PkR-OR-r0g" id="bQ0-FN-PqG"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Menu" id="8E6-uM-JMm">
