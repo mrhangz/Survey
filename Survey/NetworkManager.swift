@@ -46,7 +46,7 @@ class NetworkManager: NSObject {
                 let json = JSON(response.result.value!)
                 var surveys: [Survey] = []
                 for surveyDict in json.arrayValue {
-                    let survey = Survey(id: surveyDict["id"].stringValue, title: surveyDict["title"].string, description: surveyDict["description"].string, coverImageURL: surveyDict["cover_image_url"].string)
+                    let survey = Survey(json: surveyDict)
                     surveys.append(survey)
                 }
                 completion(surveys, nil)

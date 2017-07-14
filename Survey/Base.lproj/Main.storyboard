@@ -69,7 +69,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nav-n2-ldL">
-                                                    <rect key="frame" x="20" y="96" width="277" height="20.5"/>
+                                                    <rect key="frame" x="20" y="96" width="277" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -194,12 +194,86 @@
                     <connections>
                         <outlet property="collectionView" destination="V2f-24-gLl" id="Amd-3y-l7R"/>
                         <outlet property="pageControl" destination="OEQ-uP-bIR" id="R7i-WW-ylk"/>
-                        <segue destination="Zfn-sT-gcY" kind="show" identifier="TakeSurvey" id="dzs-sV-Djg"/>
+                        <segue destination="fFQ-LO-s4W" kind="show" identifier="TakeSurvey" id="OoM-VU-Lta"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meO-lI-jLD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="581.60000000000002" y="58.920539730134934"/>
+        </scene>
+        <!--Take Survey View Controller-->
+        <scene sceneID="5nT-ar-aYq">
+            <objects>
+                <tableViewController id="fFQ-LO-s4W" customClass="TakeSurveyViewController" customModule="Survey" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="guD-2I-lKq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="jfW-sm-9QI">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChoiceCell" id="FA7-YB-ZQx">
+                                <rect key="frame" x="0.0" y="268" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FA7-YB-ZQx" id="2RS-6l-Vg2">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TextFieldCell" id="rhl-gE-UEv">
+                                <rect key="frame" x="0.0" y="312" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rhl-gE-UEv" id="ezu-Si-SEZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="textfield" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FhW-9r-CrC">
+                                            <rect key="frame" x="8" y="7" width="359" height="30"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="FhW-9r-CrC" secondAttribute="bottom" constant="6.5" id="50U-oY-HNB"/>
+                                        <constraint firstItem="FhW-9r-CrC" firstAttribute="top" secondItem="ezu-Si-SEZ" secondAttribute="top" constant="7" id="Atr-4m-Y7y"/>
+                                        <constraint firstAttribute="trailing" secondItem="FhW-9r-CrC" secondAttribute="trailing" constant="8" id="dbS-oe-d7R"/>
+                                        <constraint firstItem="FhW-9r-CrC" firstAttribute="leading" secondItem="ezu-Si-SEZ" secondAttribute="leading" constant="8" id="eBU-Ry-obz"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TextAreaCell" id="s6p-Ar-dLP">
+                                <rect key="frame" x="0.0" y="356" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s6p-Ar-dLP" id="Ibh-H9-6it">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qP3-sR-0Ax">
+                                            <rect key="frame" x="8" y="8" width="359" height="28"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fFQ-LO-s4W" id="FdX-6Q-QQw"/>
+                            <outlet property="delegate" destination="fFQ-LO-s4W" id="Vsw-AK-xlw"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="coverImageView" destination="jfW-sm-9QI" id="JOq-sn-bxh"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vK5-7z-gPK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1453.5999999999999" y="58.920539730134934"/>
         </scene>
         <!--Menu-->
         <scene sceneID="5tX-2x-40k">
@@ -339,24 +413,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfW-ay-GhJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="582" y="-670"/>
-        </scene>
-        <!--Take Survey View Controller-->
-        <scene sceneID="cU7-3d-678">
-            <objects>
-                <viewController id="Zfn-sT-gcY" customClass="TakeSurveyViewController" customModule="Survey" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3qJ-DJ-7wq"/>
-                        <viewControllerLayoutGuide type="bottom" id="Gk6-Zs-z4y"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kZA-sJ-2TZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oKb-Mc-m59" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1454" y="59"/>
         </scene>
     </scenes>
     <resources>
