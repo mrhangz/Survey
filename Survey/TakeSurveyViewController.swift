@@ -10,39 +10,33 @@ import UIKit
 
 class TakeSurveyViewController: UITableViewController {
     
-    var survey: Survey?
+    var viewModel: TakeSurveyViewModel?
     
     @IBOutlet weak var coverImageView: UIImageView!
     
     override func viewDidLoad() {
-        navigationItem.title = survey?.title
+        navigationItem.title = viewModel?.survey?.title
         self.tableView.tableHeaderView = coverImageView
-        if survey?.coverImageURL != nil {
-            NetworkManager().getImage(imageURL: survey!.coverImageURL!) { (response) in
-                if response != nil {
-                    self.coverImageView.image = response
-                }
-            }
+        viewModel?.getCoverImage() { image in
+            self.coverImageView.image = image as? UIImage
         }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return survey?.questions?.count ?? 0
+        return viewModel!.questionCount()
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let questionView = QuestionView.instanceFromNib()
         questionView.frame = CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: questionView.frame.size.height)
-        let question = survey?.questions?[section]
+        let question = viewModel?.survey?.questions?[section]
         let string = question?.text ?? ""
         let trimmed = string.replacingOccurrences(of: "^\\n*", with: "", options: .regularExpression)
         questionView.textLabel.text = trimmed
         questionView.helpTextLabel.text = question?.helpText ?? ""
-        if question?.coverImageURL != nil {
-            NetworkManager().getImage(imageURL: question!.coverImageURL!) { (response) in
-                questionView.coverImageView.image = response
-                questionView.coverImageView.alpha = CGFloat(question?.coverImageOpacity ?? 1.0)
-            }
+        viewModel?.getCellImage(index: section) { response in
+            questionView.coverImageView.image = response as? UIImage
+            questionView.coverImageView.alpha = CGFloat(question?.coverImageOpacity ?? 1.0)
         }
         return questionView
     }
@@ -52,11 +46,11 @@ class TakeSurveyViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return survey?.questions?[section].answers?.count ?? 0
+        return viewModel!.answerCount(questionIndex: section)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let question = survey?.questions?[indexPath.section]
+        let question = viewModel?.survey?.questions?[indexPath.section]
         var cell: UITableViewCell
         if question?.displayType == "textarea" {
             cell = tableView.dequeueReusableCell(withIdentifier: "TextAreaCell", for: indexPath)

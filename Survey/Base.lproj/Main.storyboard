@@ -38,9 +38,8 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="V2f-24-gLl">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="V2f-24-gLl">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="7yx-tw-WOd">
                                     <size key="itemSize" width="317" height="300"/>
@@ -176,6 +175,12 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="V2f-24-gLl" firstAttribute="leading" secondItem="8TW-hZ-gsy" secondAttribute="leading" id="AaE-eV-L63"/>
+                            <constraint firstItem="V2f-24-gLl" firstAttribute="top" secondItem="Q8j-p6-dG1" secondAttribute="bottom" id="cdh-Af-hDd"/>
+                            <constraint firstAttribute="trailing" secondItem="V2f-24-gLl" secondAttribute="trailing" id="y41-Zu-krV"/>
+                            <constraint firstItem="yub-01-Luy" firstAttribute="top" secondItem="V2f-24-gLl" secondAttribute="bottom" id="zw5-mw-8Cl"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="SURVEYS" id="xRg-RO-W4Q">
