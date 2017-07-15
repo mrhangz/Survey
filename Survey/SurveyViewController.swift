@@ -21,17 +21,22 @@ class SurveyViewController: UIViewController {
     
     override func viewDidLoad() {
         pageControl.transform = CGAffineTransform(rotationAngle: .pi / 2)
-        pageControl.frame = CGRect(x: self.view.frame.size.width - pageControl.frame.size.width, y: 0, width: pageControl.frame.size.width, height: self.collectionView.frame.size.height)
         viewModel.getToken() {
             self.refresh()
         }
+    }
+    
+    override func viewWillLayoutSubviews() {
+        collectionView.collectionViewLayout.invalidateLayout()
+        pageControl.frame = CGRect(x: self.view.frame.size.width - pageControl.frame.size.width, y: 0, width: pageControl.frame.size.width, height: self.collectionView.frame.size.height)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TakeSurvey" {
             let destinationVC = segue.destination as! TakeSurveyViewController
             let survey = sender as! Survey
-            destinationVC.survey = survey
+            let viewModel = TakeSurveyViewModel(survey: survey)
+            destinationVC.viewModel = viewModel
         }
     }
 }

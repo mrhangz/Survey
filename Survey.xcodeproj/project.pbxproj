@@ -25,6 +25,7 @@
 		A8B36C701F18CFA200CA43E4 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B36C6F1F18CFA200CA43E4 /* QuestionView.swift */; };
 		A8B36C741F1922DC00CA43E4 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B36C731F1922DC00CA43E4 /* TokenManager.swift */; };
 		A8B36C781F19D89900CA43E4 /* SurveyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B36C771F19D89900CA43E4 /* SurveyViewModel.swift */; };
+		A8B36C7A1F1A5EB000CA43E4 /* TakeSurveyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B36C791F1A5EB000CA43E4 /* TakeSurveyViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		A8B36C6F1F18CFA200CA43E4 /* QuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		A8B36C731F1922DC00CA43E4 /* TokenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		A8B36C771F19D89900CA43E4 /* SurveyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyViewModel.swift; sourceTree = "<group>"; };
+		A8B36C791F1A5EB000CA43E4 /* TakeSurveyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeSurveyViewModel.swift; sourceTree = "<group>"; };
 		B201F2AC58C16A93EBFD1338 /* Pods-SurveyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SurveyTests/Pods-SurveyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C6CA182ADE49B63054A69FA3 /* Pods-SurveyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SurveyTests/Pods-SurveyTests.release.xcconfig"; sourceTree = "<group>"; };
 		F8C9D6BBE8D9676CB45ED2C6 /* Pods_Survey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				A8B36C771F19D89900CA43E4 /* SurveyViewModel.swift */,
+				A8B36C791F1A5EB000CA43E4 /* TakeSurveyViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				A8B1AAF51F15E1C20010A781 /* SurveyViewController.swift in Sources */,
 				A8B1AAFD1F1731270010A781 /* TakeSurveyViewController.swift in Sources */,
 				A8B1AB0E1F1894290010A781 /* Question.swift in Sources */,
+				A8B36C7A1F1A5EB000CA43E4 /* TakeSurveyViewModel.swift in Sources */,
 				A8B1AAD11F15CDEA0010A781 /* AppDelegate.swift in Sources */,
 				A8B36C741F1922DC00CA43E4 /* TokenManager.swift in Sources */,
 				A8B36C701F18CFA200CA43E4 /* QuestionView.swift in Sources */,
@@ -561,6 +565,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mrhangz.Survey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -575,6 +580,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mrhangz.Survey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
