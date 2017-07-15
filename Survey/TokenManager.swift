@@ -9,9 +9,14 @@
 import Foundation
 
 class TokenManager: NSObject {
+    
+    var username: String = "carlos@nimbl3.com"
+    var password: String = "antikera"
+    var networkManager: NetworkManager = NetworkManager()
+    
     func getToken(completion: @escaping () -> Void) {
         guard let _ = UserDefaults.standard.value(forKey: "token") else {
-            NetworkManager().getToken() { (token, error) in
+            networkManager.login(username: username, password: password) { (token, error) in
                 if token != nil {
                     UserDefaults.standard.setValue(token, forKey: "token")
                     UserDefaults.standard.synchronize()

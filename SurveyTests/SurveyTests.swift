@@ -9,27 +9,56 @@
 import XCTest
 @testable import Survey
 
+let surveys = [
+    Survey(id: "1", title: "survey 1", description: "test survey 1", coverImageURL: "url"),
+    Survey(id: "2", title: "survey 2", description: "test survey 2", coverImageURL: nil),
+    Survey(id: "3", title: "survey 3", description: "test survey 3", coverImageURL: nil)
+]
+
+class MockNetworkManager: NetworkManager {
+    override func getSurveys(completion: @escaping ([Survey]?, Error?) -> Void) {
+        completion(surveys, nil)
+    }
+    
+    override func getImage(imageURL: String, completion: @escaping (UIImage?) -> Void) {
+        if imageURL == "url" {
+            completion(UIImage())
+        } else {
+            completion(nil)
+        }
+    }
+}
+
 class SurveyTests: XCTestCase {
+    
+    var viewModel: SurveyViewModel?
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        viewModel = SurveyViewModel()
+        viewModel?.networkManager = MockNetworkManager()
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        viewModel = nil
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testGetServeys() {
+        viewModel?.getSurveys(){ flag in
+            XCTAssertTrue(flag)
+        }
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testGetCellImage() {
+        viewModel?.surveys = surveys
+        
+        viewModel?.getCellImage(index: 0) { image in
+            XCTAssertNotNil(image)
+        }
+        
+        viewModel?.getCellImage(index: 1) { image in
+            XCTAssertNil(image)
         }
     }
     
