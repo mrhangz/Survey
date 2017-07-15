@@ -8,12 +8,11 @@
 
 import Foundation
 import Alamofire
+import AlamofireImage
 import SwiftyJSON
 
 class NetworkManager: NSObject {
     private let baseURL: String = "https://nimbl3-survey-api.herokuapp.com"
-    private let username: String = "carlos@nimbl3.com"
-    private let password: String = "antikera"
     
     lazy var manager: SessionManager = {
         Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 30
@@ -25,7 +24,7 @@ class NetworkManager: NSObject {
         
     }
     
-    func getToken(completion: @escaping (String?, Error?) -> Void) {
+    func login(username: String, password: String, completion: @escaping (String?, Error?) -> Void) {
         let requestURL: String = "\(baseURL)/oauth/token"
         Alamofire.request(requestURL, method: .post, parameters: ["grant_type": "password", "username": username, "password": password]).responseJSON { (response) in
             switch response.result {
