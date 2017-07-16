@@ -26,7 +26,12 @@ class SurveyViewController: UIViewController {
         }
     }
     
-    override func viewWillLayoutSubviews() {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        let index = self.collectionView!.contentOffset.y / self.collectionView!.frame.size.height
+        coordinator.animate(alongsideTransition: { context in
+            let newYOffset = self.collectionView.frame.size.height * index
+            self.collectionView?.scrollRectToVisible(CGRect(x: 0, y: newYOffset, width: self.collectionView!.frame.size.width, height: self.collectionView!.frame.size.height), animated: false)
+        })
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
@@ -113,7 +118,7 @@ extension SurveyViewController: SurveyCollectionViewCellDelegate {
 
 extension SurveyViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
+        return self.view.bounds.size
     }
 }
 
