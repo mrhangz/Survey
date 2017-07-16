@@ -26,7 +26,9 @@ class NetworkManager: NSObject {
     
     func login(username: String, password: String, completion: @escaping (String?, Error?) -> Void) {
         let requestURL: String = "\(baseURL)/oauth/token"
-        Alamofire.request(requestURL, method: .post, parameters: ["grant_type": "password", "username": username, "password": password]).responseJSON { (response) in
+        Alamofire.request(requestURL, method: .post, parameters: ["grant_type": "password", "username": username, "password": password])
+            .validate()
+            .responseJSON { (response) in
             switch response.result {
             case .success:
                 let json = JSON(response.result.value!)
@@ -41,7 +43,9 @@ class NetworkManager: NSObject {
         let perPage = 50
         let requestURL: String = "\(baseURL)/surveys.json?page=1&per_page=\(perPage)"
         let token = UserDefaults.standard.value(forKey: "token") as! String
-        Alamofire.request(requestURL, headers: ["Authorization": "Bearer \(token)"]).responseJSON { (response) in
+        Alamofire.request(requestURL, headers: ["Authorization": "Bearer \(token)"])
+            .validate()
+            .responseJSON { (response) in
             switch response.result {
             case .success:
                 let json = JSON(response.result.value!)
