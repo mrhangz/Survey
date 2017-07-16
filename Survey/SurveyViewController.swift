@@ -28,7 +28,6 @@ class SurveyViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         collectionView.collectionViewLayout.invalidateLayout()
-        pageControl.frame = CGRect(x: self.view.frame.size.width - pageControl.frame.size.width, y: 0, width: pageControl.frame.size.width, height: self.collectionView.frame.size.height)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
