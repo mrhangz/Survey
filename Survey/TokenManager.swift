@@ -10,8 +10,8 @@ import Foundation
 
 class TokenManager: NSObject {
     
-    var username: String = "carlos@nimbl3.com"
-    var password: String = "antikera"
+    private var username: String = "carlos@nimbl3.com"
+    private var password: String = "antikera"
     var networkManager: NetworkManager = NetworkManager()
     
     func getToken(completion: @escaping () -> Void) {

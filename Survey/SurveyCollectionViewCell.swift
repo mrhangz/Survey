@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SurveyCollectionViewCellDelegate {
+protocol SurveyCollectionViewCellDelegate: class {
     func takeSurvey(index: Int)
 }
 
@@ -18,7 +18,7 @@ class SurveyCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var takeSurveyButton: UIButton!
     
-    var delegate: SurveyCollectionViewCellDelegate?
+    weak var delegate: SurveyCollectionViewCellDelegate?
     
     @IBAction func takeSurvey(sender: UIButton) {
         delegate?.takeSurvey(index: sender.tag)
