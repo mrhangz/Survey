@@ -1,7 +1,5 @@
 PODS:
   - Alamofire (4.5.0)
-  - AlamofireImage (3.2.0):
-    - Alamofire (~> 4.1)
   - CHIPageControl (0.1.3):
     - CHIPageControl/Aji (= 0.1.3)
     - CHIPageControl/Aleppo (= 0.1.3)
@@ -20,25 +18,28 @@ PODS:
   - CHIPageControl/Paprika (0.1.3)
   - CHIPageControl/Puya (0.1.3)
   - KVLoading (1.4)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
   - SideMenu (2.3.3)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire
-  - AlamofireImage
   - CHIPageControl
   - KVLoading
+  - SDWebImage
   - SideMenu
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   CHIPageControl: 2d3a0edacd7e3bc113bc88cbf187ba8f0b045548
   KVLoading: 64785bf0333c1873265c4a7c7cbdb4565ef63d55
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SideMenu: a447554ae5c982e8077666389e1c8b0c8656e065
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 6f1439aa9690964fa5903ca5b875ec83e103d7b3
+PODFILE CHECKSUM: 3730f814990f68cc8d29204df42baa9b0b6f4075
 
 COCOAPODS: 1.2.1
