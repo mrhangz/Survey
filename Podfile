@@ -6,7 +6,7 @@ target 'Survey' do
   use_frameworks!
 
   pod 'Alamofire'
-  pod 'AlamofireImage'
+  pod 'SDWebImage'
   pod 'SwiftyJSON'
   pod 'CHIPageControl'
   pod 'KVLoading'
